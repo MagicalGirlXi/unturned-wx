@@ -1,28 +1,33 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/about/about"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "可爱希希",
+    "navigationBarTitleText": "希希小工具",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
     "list": [{
       "pagePath": "pages/index/index",
       "text": "首页",
+      "iconPath": "resources/home-off.png",
+      "selectedIconPath": "resources/home-on.png"
+    }, {
+      "pagePath": "pages/test/test",
+      "text": "物品表",
       "iconPath": "resources/list.png",
       "selectedIconPath": "resources/list.png"
     }, {
-      "pagePath": "pages/logs/logs",
-      "text": "日志"
-    }, {
-      "pagePath": "pages/test/test",
-      "text": "测试"
-    }]
+      "pagePath": "pages/about/about",
+      "text": "关于",
+      "iconPath": "resources/info.png",
+      "selectedIconPath": "resources/info.png"
+    }
+  ]
   },
   "darkmode": true,
   "style": "v2",

@@ -1,11 +1,35 @@
-<view class="container log-list">
-  <block wx:for="{{showJsonList}}" wx:for-item="lei">
-    <text class="log-item">类别:{{lei.Name}}</text>
-    <text wx:for="{{lei.Contain}}" wx:for-item="item">
-      ID: {{item.ID}}<br />
-      名称: {{item.Name}}<br />
-      中文名: {{item.CnName}}<br />
-      描述: {{item.Description}}<br />
-    </text>
-  </block>
+<view class="container">
+  <view class="search">
+    <input type="text" placeholder="输入搜索关键词" value="{{name}}" bindinput="bindinput" bindconfirm="bindconfirm"></input>
+    <image src="/resources/icon/search.svg"></image>
+  </view>
+
+  <view class="content-container">
+    <scroll-view class="category-container" scroll-y="true" scroll-with-animation="true">
+      <view class="category" wx:for="{{showJsonList}}" wx:for-item="lei" data-id="{{lei.Index}}" bindtap="onLeiClick">
+        <view class="name">{{lei.Name}}</view>
+      </view>
+    </scroll-view>
+    <scroll-view class="goods-container" scroll-y="true" scroll-top="{{scrolltop}}" >
+      <view class="goods" wx:for="{{currentLei.Contain}}" wx:key="id" wx:for-item="item">
+        <image mode="aspectFill" class="pic" src="{{item.pic}}" data-id='{{item.id}}' bindtap="toDetailsTap">
+          <!-- <image class='fresh-tag' src="/images/goods-description/fresh.png"></image> -->
+        </image>
+        <view class="name ellipsis" data-id='{{item.Id}}' bindtap="toDetailsTap">{{item.CnName}}</view>
+        <view class='soldInfo'>
+          <view class='good-price-box'>
+            <text class="price">ID: {{item.ID}}</text>
+          </view>
+        </view>
+        <view class='soldInfo'>
+          <view class='good-sales-box'>
+            <text class="number">品质: {{item.Rarity}}</text>
+            <text>详细信息</text>
+          </view>
+        </view>
+        <image data-id="{{item.id}}" class="car" src="/resources/icon/search.svg"></image>
+      </view>
+    </scroll-view>
+  </view>
+  
 </view>

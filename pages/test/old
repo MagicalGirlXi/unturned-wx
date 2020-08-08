@@ -1,0 +1,10 @@
+
+  <block class="category" wx:for="{{showJsonList}}" wx:for-item="lei">
+    <text class="name">类别:{{lei.Name}}</text>
+    <text wx:for="{{lei.Contain}}" wx:for-item="item">
+      ID: {{item.ID}}<br />
+      名称: {{item.Name}}<br />
+      中文名: {{item.CnName}}<br />
+      描述: {{item.Description}}<br />
+    </text>
+  </block>

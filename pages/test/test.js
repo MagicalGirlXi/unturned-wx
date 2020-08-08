@@ -6,7 +6,15 @@ Page({
   },
   onLoad: function () {
     this.setData({
-      showJsonList: localData.testJson
+      showJsonList: localData.testJson,
+      currentLei: localData.testJson[2]
+    })
+  },
+  onLeiClick: function(e) {
+    var index = e.target.dataset.id;
+    console.log(index)
+    this.setData({
+      currentLei: localData.testJson[parseInt(index)]
     })
   }
 })
