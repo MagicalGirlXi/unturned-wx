@@ -4,7 +4,9 @@ const app = getApp()
 
 Page({
   data: {
-    motto: '目前功能：分类物品表',
+    motto: '目前功能：分类物品表 \n \
+    按名称物品查询 \n \
+    物品详情查询',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')

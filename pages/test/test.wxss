@@ -298,3 +298,9 @@ page,view,image,input {
   left: 0;
   text-align: center;
 }
+.dialog {
+  text-align: center;
+  line-height: 54rpx;
+  font-size: 36rpx;
+  color: #666;
+}

@@ -1,9 +1,10 @@
 //logs.js
 var localData = require('../../resources/json.js')
-
+const scui = require('../../ui/dist/sc-ui');
 Page({
   data: {
-    searchName: null
+    searchName: null,
+    itemdetail: null
   },
   onLoad: function () {
     wx.showLoading({
@@ -14,6 +15,7 @@ Page({
       currentLei: localData.testJson[2]
     })
     wx.hideLoading()
+    this.data.dialog
   },
   onLeiClick: function(e) {
     var index = e.target.dataset.id;
@@ -21,6 +23,13 @@ Page({
     this.setData({
       currentLei: localData.testJson[parseInt(index)]
     })
+  },
+  toDetailsTap: function(e) {
+    this.setData({
+      itemdetail: e.currentTarget.dataset.id
+    })
+    
+    this.openDialog();
   },
   onSearch: function(e) {
     let result = {
@@ -47,5 +56,14 @@ Page({
       currentLei: result
     })
     wx.hideLoading()
-  }
+  },
+  onReady() {
+    this.data.dialog = scui.Dialog("#dialog");
+  },
+  openDialog(){
+      this.data.dialog.toggle()/open();
+  },
+  closeDialog(){
+      this.data.dialog.toggle()/close();
+  },
 })

@@ -11,25 +11,34 @@
       </view>
     </scroll-view>
     <scroll-view class="goods-container" scroll-y="true" scroll-top="{{scrolltop}}" >
-      <view class="goods" wx:for="{{currentLei.Contain}}" wx:key="id" wx:for-item="item">
-        <image mode="aspectFill" class="pic" src="{{item.pic}}" data-id='{{item.id}}' bindtap="toDetailsTap">
+      <view class="goods" wx:for="{{currentLei.Contain}}" wx:key="id" wx:for-item="item"  >
+        <image mode="aspectFill" class="pic" src="{{item.pic}}" data-id='{{item}}' bindtap="toDetailsTap">
           <!-- <image class='fresh-tag' src="/images/goods-description/fresh.png"></image> -->
         </image>
-        <view class="name ellipsis" data-id='{{item.Id}}' bindtap="toDetailsTap">{{item.CnName}}</view>
+        <view class="name ellipsis" data-id='{{item}}' bindtap="toDetailsTap">{{item.CnName}}</view>
         <view class='soldInfo'>
           <view class='good-price-box'>
             <text class="price">ID: {{item.ID}}</text>
           </view>
         </view>
-        <view class='soldInfo'>
+        <view class='soldInfo'> 
           <view class='good-sales-box'>
             <text class="number">品质: {{item.Rarity}}</text>
             <text>详细信息</text>
           </view>
         </view>
-        <image data-id="{{item.id}}" class="car" src="/resources/icon/search.svg"></image>
+        <image data-id="{{item}}" class="car" src="/resources/icon/search.svg" bindtap="toDetailsTap"></image>
       </view>
     </scroll-view>
   </view>
-  
+  <sc-dialog id="dialog" sc-class="box-shadow-8">
+   <view class="dialog">
+    <text >英文原名：{{itemdetail.Name}}<br />
+    中文名：{{itemdetail.CnName}}<br />
+    物品ID：{{itemdetail.ID}}<br />
+    品质：{{itemdetail.Rarity}}<br />
+    描述：{{itemdetail.Description}}<br />
+    </text>
+   </view>
+</sc-dialog>
 </view>

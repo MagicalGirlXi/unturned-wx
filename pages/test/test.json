@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "物品表"
+  "navigationBarTitleText": "物品表",
+  "usingComponents":{
+    "sc-dialog":"../../ui/dist/components/scDialog/sc-dialog"
+  }
 }

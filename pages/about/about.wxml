@@ -1,5 +1,8 @@
 <view class="container">
-  <view class="title">
+  <view class="about">
     <text>BUG反馈，功能建议联系magicgirlxi@qq.com</text>
+  </view>
+  <view class="about">
+    <text>预计添加功能：载具查询</text>
   </view>
 </view>
